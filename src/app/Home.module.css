@@ -1,0 +1,87 @@
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: clamp(20rem, 90%, 55rem);
+  margin: 0 auto;
+  height: calc(120%);
+  margin-bottom: 5rem;
+}
+
+.Intro {
+  display: flex;
+  flex-direction: column;
+  margin: 2.5rem 0;
+}
+
+.Intro p {
+  font-size: clamp(3rem, 4vw, 4rem);
+  font-weight: 450;
+  letter-spacing: -0.25rem;
+  margin-bottom: 0.5rem;
+  line-height: 120%;
+}
+
+.Navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0;
+}
+
+.Navigation li {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.1rem;
+  list-style: none;
+}
+
+.Navigation a {
+  text-decoration: none;
+  color: var(--color-secondary);
+}
+
+.Navigation a span {
+  display: inline-block;
+  transition: 0.2s ease-in-out;
+}
+
+.Navigation a:hover span {
+  transform: translateX(20%);
+}
+
+.Contact {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.FullContactButton {
+  text-align: left;
+
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.1rem;
+  margin-bottom: -10px;
+}
+
+.ContactItem {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+.Tip {
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: -0.05rem;
+  margin-bottom: 0rem;
+}
+
+/* TODO create some normal animation */
+.ContactItem:active,
+.FullContactButton:active {
+  color: var(--color-secondary);
+  transition: color 0s;
+}
