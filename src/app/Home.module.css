@@ -23,7 +23,8 @@
 
 .Navigation {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-wrap: wrap;
   gap: 1.5rem;
   padding: 0;
 }
@@ -84,4 +85,10 @@
 .FullContactButton:active {
   color: var(--color-secondary);
   transition: color 0s;
+}
+
+.Link {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
 }

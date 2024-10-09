@@ -9,3 +9,7 @@
   cursor: pointer;
   outline: inherit;
 }
+
+.Button:focus {
+  outline: revert;
+}
