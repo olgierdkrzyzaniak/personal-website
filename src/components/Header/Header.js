@@ -21,7 +21,7 @@ function ResumeButton() {
 		<Tooltip.Provider>
 			<Tooltip.Root>
 				<Tooltip.Trigger asChild>
-          <a className={styles.action} href="/Resume.pdf">
+          <a className={styles.action} href="/Resume.pdf" target="blank">
             <BackpackIcon size="1.5rem" />
             <VisuallyHidden>View Resume</VisuallyHidden>
           </a>

@@ -20,7 +20,7 @@ function Footer() {
               <Link href="/projects">Projects</Link>
             </li>
             <li>
-              <Link href="/Resume.pdf">Résumé</Link>
+              <Link href="/Resume.pdf" target="blank">Résumé</Link>
             </li>
             <li>
               <Link href="https://github.com/olgierdkrzyzaniak">Github Profile</Link>

@@ -1,0 +1,32 @@
+.Piece {
+  display: flex;
+  gap: 5px;
+  text-wrap: noWrap;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin: 8px;
+}
+.LinkButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--color-primary-200);
+  padding: 4px 8px;
+  margin: 4px;
+  border-radius: 9999px;
+  border: solid 1px var(--color-gray-300);
+  text-decoration: none;
+}
+
+.LinkButton:hover {
+  border: solid 1px var(--color-primary-900);
+  background-color: var(--color-decorative-200);
+}
+
+.StackElement {
+  margin: 0;
+  text-wrap: nowrap;
+  background-color: var(--color-gray-100);
+  padding: 0 8px;
+  border-radius: 9999px;
+}

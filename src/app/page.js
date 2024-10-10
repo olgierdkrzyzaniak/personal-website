@@ -19,7 +19,7 @@ async function Home() {
       <nav>
         <ul className={styles.Navigation}>
           <li>
-            <a className={styles.Link} href="/Resume.pdf">
+            <a className={styles.Link} href="/Resume.pdf" target="blank">
               Resume <span className={styles.Arrow}> → </span>
             </a>
           </li>

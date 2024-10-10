@@ -1,0 +1,83 @@
+---
+title: "Landing page for the Dika Nutrition Clinic"
+abstract: I promised my mom a long time ago that I would create a website for her nutrition clinic, and I’ve started the project many times but abandoned it because I wasn’t satisfied with the results. In the process, I learned how server components and Next.js work. They are great!
+publishedOn: "2024-10-09T18:03:30-0400"
+---
+
+<Tag
+  website={"https://dietetyk-chodziez.pl/"}
+  website_title={"Poradnia Dietetyczna Dika w Chodzieży"}
+  website_favicon={"/dikafavicon.ico"}
+  github={"https://github.com/olgierdkrzyzaniak/dika-strona"}
+  github_title={"dika-strona"}
+>
+  {[
+    "React",
+    "Next.js 14",
+    "Framer Motion",
+    "React Aria Components",
+    "Hosted on Vercel",
+  ]}
+</Tag>
+
+## Isn’t it overkill to use all this stack to build simple one page website?
+
+I was considering whether to use React when creating this page. I could have easily written something very similar using almost pure HTML, CSS, and JS, because there is a common belief that _React is a good tool for complex applications with lots of interactivity, but it's overkill for a static site._
+
+But even if we preasume that performance is the most important thing, I don't think it's true anymore that React is bad for performance, when we use tool like Next.
+
+- Because Next uses Server Side Rendering, the initial HTML is delivered fully-formed. If we build our HTML at compile-time, it's the fastest possible solution to this problem.
+
+- It might take some time for the JS bundle to download, to make the site *fully* interactive, but most things should still work in the meantime. If you click a link before the JS bundle has downloaded, it'll still take you where you want to go. Once the JS bundle *has* downloaded, all subsequent link clicks are *blazing fast*, *way* faster than a bunch of plain HTML files. In this project, I didn't include too many routes; it's a typical single-page application. However, in the case of my portfolio site, this becomes more important
+
+- Besides, I wanted to have a Next.js project in my portfolio, which should already be a sufficient justification for using it. :D
+
+## Design
+
+I aimed for this project to be as simple and clear as possible, visually. First, so that the page ages slowly, and simplicity is something that never goes out of style. Second, it’s a design type in which I feel most comfortable.
+
+When creating such a simple page, there's generally not much room for very advanced usability tricks, but I managed to include a few nice touches like a link to Google Maps when clicking the address, or copying contact details to the clipboard.
+
+### Implementations
+
+Subtle SVG animations were implemented using Framer Motion, which provides a pleasant way to create spring-based animations.
+
+To implement the menu, I used the new react-aria-components. I usually used Radix, but since Adobe released their library, it has become my go-to for unstyled components. It offers excellent accessibility out of the box and solid documentation.
+
+If we're talking about accessibility to ensure that all `motion` elements respect the “Reduce motion” preference I created `RespectMotionPreferences` component which implements `MotionConfig reducedMotion="user”`
+
+It took me a surprisingly long time to create moving logo. Initially, I tried to implement a full logo centered on the screen that would shrink and move to the middle as you scroll. However, it was challenging to position the menu elements properly and make everything align smoothly. In the end, I decided that the logo would be part of the menu, just enlarged and shifted downward on the begining, and as you scroll, it returns to its place.
+
+```jsx
+const { scrollYProgress } = useScroll();
+const scale = useTransform(scrollYProgress, [0, 0.04], [8, 1]);
+
+const y = useTransform(scrollYProgress, [0, 0.04], [300, 0]);
+const x = useTransform(scrollYProgress, [0, 0.04], [15, 0]);
+
+<div className={styles.LogoWrapper}>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{
+      type: "spring",
+      stiffness: 10,
+      damping: 5,
+    }}
+  >
+    <motion.div className={styles.Logo} style={{ scale, y, x }}>
+      dika
+    </motion.div>
+  </motion.div>
+</div>;
+```
+
+This solution seemed almost perfect to me until an additional drawback revealed itself, which I will explain below.
+
+## Things to improve
+
+Shoot, I hope you're not opening this on Safari on macOS because I have no idea how the page looks in that browser, as I work on Windows and don't have access to Safari. But I fear the logo might be pixelated due to the way Safari handles `transform: scale()`. At least that's what I think, especially after seeing how it looked on my phone’s Safari browser after deployment. I decided to remove it on mobile devices (since a lot of people use iPhones with the default browser) until I figure out what to do next. If you haven't checked it yet, don't do it now—no cheating.
+
+I still don't understand why SEO is performing so poorly. When I search for the phrase 'Dietitian Chodzież,' it shows up on the third page (which no one ever gets to), even though I tried to optimize it for this keyword. Additionally, the link and description don't display the way I programmed them, and not how the simulations show on other platforms. Google’s search engine is still a mystery to me. Bing shows it exactly as I want, but let’s be real—who uses Bing?
+
+The file organization could be better too (not every component needs its own folder).
