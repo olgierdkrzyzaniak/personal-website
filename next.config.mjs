@@ -4,7 +4,7 @@ const nextConfig = {};
 module.exports = {
   experimental: {
     outputFileTracingIncludes: {
-      '/*': ['./content'],
+      '/*': ['./content/'],
     },
   },
 };
