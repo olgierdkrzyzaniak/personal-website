@@ -84,7 +84,7 @@ body {
   display: flex;
   flex-direction: column;
   background: var(--color-backdrop);
-  border-bottom: 3px solid var(--color-decorative-600);
+  border-bottom: 3px solid var(--color-decorative);
 }
 
 body::before {

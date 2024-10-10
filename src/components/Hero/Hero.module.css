@@ -15,7 +15,7 @@
   max-width: var(--content-width);
   padding: var(--viewport-padding);
   padding-top: calc(48px + 8vw);
-  padding-bottom: 64px;
+  padding-bottom: 2vw;
 }
 
 .content h1 {
@@ -23,7 +23,7 @@
 }
 .content p {
   font-size: 1.125rem;
-  color: var(--color-decorative-900);
+  color: var(--color-decorative);
   margin-bottom: 0px;
   font-weight: 400;
 }

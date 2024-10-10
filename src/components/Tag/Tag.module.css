@@ -10,7 +10,6 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  background-color: var(--color-primary-200);
   padding: 4px 8px;
   margin: 4px;
   border-radius: 9999px;
@@ -19,8 +18,8 @@
 }
 
 .LinkButton:hover {
-  border: solid 1px var(--color-primary-900);
-  background-color: var(--color-decorative-200);
+  border: solid 1px var(--color-primary);
+  background-color: var(--color-decorative);
 }
 
 .StackElement {
