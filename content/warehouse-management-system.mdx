@@ -60,7 +60,7 @@ def update_table_record(self, item_id, user_id, product_id, quantity, date):
             self.tree.delete(item_id)
 ```
 
-State similar to HATOS. Initially, I wanted to program a state object, but updating it this way was extremely cumbersome and, when implemented, caused errors which I couldn't explain, so I made the table itself the source of state.
+State similar to HATEOAS. Initially, I wanted to program a state object, but updating it this way was extremely cumbersome and, when implemented, caused errors which I couldn't explain, so I made the table itself the source of state.
 
 Before starting, I didn’t know how a barcode scanner would interact with the computer since I had never used one before. However, a quick YouTube search showed that it literally types the text assigned to the code and presses "Enter."
 

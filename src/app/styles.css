@@ -43,8 +43,8 @@ h6 {
 
 /* THEME VARIABLES */
 html {
-  --content-width: 55rem;
-  --outer-content-width: 80rem;
+  --content-width: 50rem;
+  --outer-content-width: 75rem;
   --viewport-padding: 16px;
   --header-height: 5rem;
   --trimmed-content-width: calc(
@@ -130,7 +130,7 @@ h3 {
   font-weight: 500;
 }
 p {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   margin-bottom: 1.5em;
 }
 p code {
