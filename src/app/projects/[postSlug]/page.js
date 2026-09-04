@@ -25,7 +25,7 @@ async function BlogPost({ params }) {
     <article className={styles.wrapper}>
       <Hero title={frontmatter.title} publishedOn={frontmatter.publishedOn} />
       <div className={styles.page}>
-        <MDXRemote source={content} components={COMPONENT_MAP} />
+        <MDXRemote source={content} components={COMPONENT_MAP} options={{ blockJS: false }} />
       </div>
     </article>
   );
